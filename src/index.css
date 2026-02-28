@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #ffffff;
+  --color-brand-100: #fafafa;
+  --color-brand-200: #e4e4e7;
+  --color-brand-300: #d4d4d8;
+  --color-brand-400: #ffffff;
+  --color-brand-500: #f1f5f9;
+  --color-brand-600: #cbd5e1;
+  --color-brand-700: #94a3b8;
+  --color-brand-800: #64748b;
+  --color-brand-900: #475569;
+  --color-brand-950: #020617;
+
+  --color-slate-950: #02040a;
+  --color-slate-900: #0a0e17;
+  --color-slate-800: #131b2e;
+  
+  --shadow-skeuo-raised: 
+    -4px -4px 10px rgba(255, 255, 255, 0.05),
+    4px 4px 10px rgba(0, 0, 0, 0.5);
+    
+  --shadow-skeuo-inset: 
+    inset 4px 4px 10px rgba(0, 0, 0, 0.6),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body {
+  @apply bg-slate-950 text-slate-200 antialiased font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight text-slate-50;
+}
+
