@@ -1,60 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layers, Users, MousePointer2, PieChart, CreditCard, Download, ArrowRight, Check } from 'lucide-react';
+import { tools } from '../data/tools';
 // Determine if FAQ component exists or was hallucinated. Assuming it exists based on import in original file.
 import FAQ from '../components/FAQ';
 
 const Home = () => {
     return (
         <div className="bg-slate-950 min-h-screen selection:bg-brand-500/30 selection:text-brand-200">
-            {/* Hero Section */}
-            <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
-                <img
-                    src="/bg.png"
-                    alt=""
-                    className="absolute inset-x-0 -top-20 -z-20 w-full object-cover object-bottom opacity-50"
-                />
-                <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                    <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }} />
-                </div>
-                <div className="absolute inset-0 -z-10 bg-blue-900/20 mix-blend-overlay" />
-                
-                <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
-                    <div className="max-w-3xl text-left">
-                        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl mb-8 drop-shadow-lg shadow-black/50">
-                            Stop paying enterprise prices for your daily apps
-                        </h1>
-                        
-                        <p className="mt-6 text-xl leading-8 text-white max-w-2xl font-medium drop-shadow-md shadow-black/50">
-                            Replace your $5000/mo SaaS stack with one simple $100 subscription. 
-                            <br/>
-                            Get access to premium indie tools for project management, marketing, design, and more.
-                        </p>
-                        
-                        <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
-                             <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
-                                Get Started
-                             </Link>
-                             <Link to="/store" className="rounded-[16px] border border-slate-700 bg-slate-900/50 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-800 hover:-translate-y-1 transition-all flex items-center gap-2">
-                                Included Apps
-                             </Link>
-                             <Link to="/builders" className="rounded-[16px] border border-slate-700 bg-slate-900/50 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-800 hover:-translate-y-1 transition-all">
-                                For Builders
-                             </Link>
-                        </div>
-                    </div>
+            /* Hero Section */}
+                        <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
+                            <img
+                                src="/bg.png"
+                                alt=""
+                                className="absolute inset-x-0 -top-20 -z-20 w-full object-cover object-bottom opacity-50"
+                            />
+                            
+                            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
+                                <div className="max-w-3xl text-left">
+                                    <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl mb-8 drop-shadow-lg shadow-black/50">
+                                        Stop paying enterprise prices for your daily apps
+                                    </h1>
+                                    
+                                    <p className="mt-6 text-xl leading-8 text-white max-w-2xl font-medium drop-shadow-md shadow-black/50">
+                                        Replace your $5000/mo SaaS stack with one simple $100 subscription. 
+                                        <br/>
+                                        Get access to premium indie tools for project management, marketing, design, and more.
+                                    </p>
+                                    
+                                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
+                                         <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
+                                            Get Started
+                                         </Link>
+                                         <Link to="/store" className="rounded-[16px] border border-slate-600 bg-slate-800 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-700 hover:-translate-y-1 transition-all flex items-center gap-2">
+                                            Included Apps
+                                         </Link>
+                                     
+                                    </div>
+                                </div>
 
-                    {/* Hero Abstract UI */}
+                                {/* Hero Abstract UI */}
                     <div className="mt-20 sm:mt-32 relative perspective-1000">
                          <div className="relative mx-auto max-w-5xl rounded-[24px] bg-slate-900 border border-slate-800 p-2 shadow-[20px_20px_60px_rgba(0,0,0,0.5),-5px_-5px_20px_rgba(255,255,255,0.02)] transform rotate-x-12">
                                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                                  
-                                 <div className="bg-slate-950/80 rounded-[20px] overflow-hidden p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-                                        {[1,2,3,4].map((i) => (
-                                                <div key={i} className="h-32 bg-slate-900 rounded-xl border border-slate-800 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-1px_-1px_2px_rgba(255,255,255,0.05)] flex items-center justify-center group overflow-hidden relative">
+                                 <div className="bg-slate-950/80 rounded-[20px] overflow-hidden p-6 grid grid-cols-2 md:grid-cols-5 gap-6">
+                                        {tools.slice(0, 10).map((tool) => (
+                                                <div key={tool.id} className="h-32 bg-slate-900 rounded-xl border border-slate-800 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-1px_-1px_2px_rgba(255,255,255,0.05)] flex items-center justify-center group overflow-hidden relative" title={tool.name}>
                                                          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                         <div className="h-12 w-12 rounded-lg bg-slate-800 shadow-[5px_5px_10px_rgba(0,0,0,0.3),-2px_-2px_5px_rgba(255,255,255,0.03)] flex items-center justify-center">
-                                                                <Layers className="w-6 h-6 text-slate-400 group-hover:text-white transition-colors" />
+                                                         <div className="h-16 w-16 rounded-xl bg-white p-2 shadow-[5px_5px_10px_rgba(0,0,0,0.3),-2px_-2px_5px_rgba(255,255,255,0.03)] flex items-center justify-center overflow-hidden">
+                                                                <img src={tool.logo} alt={tool.name} className="w-full h-full object-contain" />
                                                          </div>
                                                 </div>
                                         ))}

@@ -13,7 +13,6 @@ const Navbar = () => {
           <Link to="/" className="flex-shrink-0 flex items-center">
             <span className="font-extrabold text-2xl tracking-tight text-white">Hackier</span>
           </Link>
-          
           <div className="hidden sm:flex sm:space-x-8 justify-center">
             <Link to="/" className="text-white hover:text-slate-200 inline-flex items-center px-1 pt-1 text-base font-medium transition-all">
               Home
