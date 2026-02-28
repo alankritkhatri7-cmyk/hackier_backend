@@ -28,6 +28,8 @@ const Home = () => {
                                         Get access to premium indie tools for project management, marketing, design, and more.
                                     </p>
                                     
+
+                                    
                                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
                                          <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
                                             Get Started
