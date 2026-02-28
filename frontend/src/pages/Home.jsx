@@ -8,7 +8,6 @@ import FAQ from '../components/FAQ';
 const Home = () => {
     return (
         <div className="bg-slate-950 min-h-screen selection:bg-brand-500/30 selection:text-brand-200">
-            /* Hero Section */}
                         <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
                             <img
                                 src="/bg.png"

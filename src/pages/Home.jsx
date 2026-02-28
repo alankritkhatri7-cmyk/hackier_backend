@@ -8,40 +8,38 @@ import FAQ from '../components/FAQ';
 const Home = () => {
     return (
         <div className="bg-slate-950 min-h-screen selection:bg-brand-500/30 selection:text-brand-200">
-            /* Hero Section */}
-                        <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
-                            <img
-                                src="/bg.png"
-                                alt=""
-                                className="absolute inset-x-0 -top-20 -z-20 w-full object-cover object-bottom opacity-50"
-                            />
-                            
-                            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
-                                <div className="max-w-3xl text-left">
-                                    <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl mb-8 drop-shadow-lg shadow-black/50">
-                                        Stop paying enterprise prices for your daily apps
-                                    </h1>
-                                    
-                                    <p className="mt-6 text-xl leading-8 text-white max-w-2xl font-medium drop-shadow-md shadow-black/50">
-                                        Replace your $5000/mo SaaS stack with one simple $100 subscription. 
-                                        <br/>
-                                        Get access to premium indie tools for project management, marketing, design, and more.
-                                    </p>
-                                    
+            {/* Hero Section */}
+            <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
+                <img
+                    src="/bg.png"
+                    alt=""
+                    className="absolute inset-x-0 -top-20 -z-20 w-full object-cover object-bottom opacity-50"
+                />
+                
+                <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
+                    <div className="max-w-3xl text-left">
+                        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl mb-8 drop-shadow-lg shadow-black/50">
+                            Stop paying enterprise prices for your daily apps
+                        </h1>
+                        
+                        <p className="mt-6 text-xl leading-8 text-white max-w-2xl font-medium drop-shadow-md shadow-black/50">
+                            Replace your $5000/mo SaaS stack with one simple $100 subscription. 
+                            <br/>
+                            Get access to premium indie tools for project management, marketing, design, and more.
+                        </p>
+                        
+                        <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
+                             <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
+                                Get Started
+                             </Link>
+                             <Link to="/store" className="rounded-[16px] border border-slate-700 bg-slate-900/50 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-800 hover:-translate-y-1 transition-all flex items-center gap-2">
+                                Included Apps
+                             </Link>
+                         
+                        </div>
+                    </div>
 
-                                    
-                                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
-                                         <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
-                                            Get Started
-                                         </Link>
-                                         <Link to="/store" className="rounded-[16px] border border-slate-600 bg-slate-800 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-700 hover:-translate-y-1 transition-all flex items-center gap-2">
-                                            Included Apps
-                                         </Link>
-                                     
-                                    </div>
-                                </div>
-
-                                {/* Hero Abstract UI */}
+                    {/* Hero Abstract UI */}
                     <div className="mt-20 sm:mt-32 relative perspective-1000">
                          <div className="relative mx-auto max-w-5xl rounded-[24px] bg-slate-900 border border-slate-800 p-2 shadow-[20px_20px_60px_rgba(0,0,0,0.5),-5px_-5px_20px_rgba(255,255,255,0.02)] transform rotate-x-12">
                                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
