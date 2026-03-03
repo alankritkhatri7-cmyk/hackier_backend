@@ -1,43 +1,51 @@
 export const tools = [
   {
     id: 1,
-    name: "Carrd",
-    category: "Website Builder",
-    description: "Simple, free, fully responsive one-page sites for pretty much anything.",
-    originalPrice: 9,
+    name: "Keechu",
+    category: "Project Management",
+    description: "A personal productivity app to manage your tasks and projects efficiently.",
+    originalPrice: 15,
     included: true,
-    logo: "https://logo.clearbit.com/carrd.co",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80"
+    logo: "/logos/keechu.svg",
+    url: "https://www.keechu.com",
+    users: "1000-10k",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 2,
-    name: "Plausible",
-    category: "Analytics",
-    description: "A lightweight and open-source website analytics tool without cookies.",
-    originalPrice: 9,
+    name: "Unshpe",
+    category: "Finance",
+    description: "Structuring financial docs — organize, parse, and manage your financial documents with ease.",
+    originalPrice: 12,
     included: true,
-    logo: "https://logo.clearbit.com/plausible.io",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    logo: "/logos/unshpe.svg",
+    url: "#",
+    users: "0-1000",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 3,
-    name: "Bannerbear",
-    category: "Marketing",
-    description: "Auto-generate social media visuals, ecommerce banners, and dynamic images via API.",
-    originalPrice: 49,
+    name: "Lila",
+    category: "Wellness",
+    description: "Tiny wellness breaks between your tasks — breathing exercises and desk-friendly movements in every new tab.",
+    originalPrice: 5,
     included: true,
-    logo: "https://logo.clearbit.com/bannerbear.com",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
+    logo: "/logos/lila.svg",
+    url: "https://chromewebstore.google.com/detail/lila-by-zivy-work-time-we/gbpccmgkbkggamdibfdfpjgdajgepljg",
+    users: "0-1000",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 4,
-    name: "Ghost",
-    category: "Publishing",
-    description: "A powerful app for new-media creators to publish, share, and grow a business around their content.",
-    originalPrice: 29,
+    name: "PostDoge",
+    category: "Marketing Tools",
+    description: "Get all the relevant conversations about your product happening across the internet in a single place.",
+    originalPrice: 19,
     included: true,
-    logo: "https://logo.clearbit.com/ghost.org",
-    image: "https://images.unsplash.com/photo-1499750310159-5b9887039e54?auto=format&fit=crop&w=800&q=80"
+    logo: "/logos/postdoge.svg",
+    url: "https://postdoge.com",
+    users: "0-1000",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 5,
@@ -46,7 +54,7 @@ export const tools = [
     description: "A super simple e-commerce platform for creators to sell digital products.",
     originalPrice: 10,
     included: true,
-    logo: "https://logo.clearbit.com/gumroad.com",
+    logo: "https://www.google.com/s2/favicons?domain=gumroad.com&sz=128",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -56,7 +64,7 @@ export const tools = [
     description: "Your personal assistant to grow and monetize your Twitter audience.",
     originalPrice: 19,
     included: true,
-    logo: "https://logo.clearbit.com/hypefury.com",
+    logo: "https://www.google.com/s2/favicons?domain=hypefury.com&sz=128",
     image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -66,7 +74,7 @@ export const tools = [
     description: "Collect and display video testimonials from your customers with no coding required.",
     originalPrice: 50,
     included: true,
-    logo: "https://logo.clearbit.com/testimonial.to",
+    logo: "https://www.google.com/s2/favicons?domain=testimonial.to&sz=128",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -76,7 +84,7 @@ export const tools = [
     description: "The all-in-one platform for running your SaaS business, from payments to tax compliance.",
     originalPrice: 29,
     included: true,
-    logo: "https://logo.clearbit.com/lemonsqueezy.com",
+    logo: "https://www.google.com/s2/favicons?domain=lemonsqueezy.com&sz=128",
     image: "https://images.unsplash.com/photo-1556740979-67a8455e2d14?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -86,7 +94,7 @@ export const tools = [
     description: "The newsletter platform built for growth, giving creators the tools to scale.",
     originalPrice: 39,
     included: true,
-    logo: "https://logo.clearbit.com/beehiiv.com",
+    logo: "https://www.google.com/s2/favicons?domain=beehiiv.com&sz=128",
     image: "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -96,7 +104,7 @@ export const tools = [
     description: "Create a website from your Notion pages in minutes with custom domains and SEO.",
     originalPrice: 12,
     included: true,
-    logo: "https://logo.clearbit.com/super.so",
+    logo: "https://www.google.com/s2/favicons?domain=super.so&sz=128",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80"
   }
 ];

@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { tools } from '../data/tools';
-import { Search, Grid, Layout, Star, Zap, Briefcase, PenTool, LayoutTemplate, MessageSquare, TrendingUp } from 'lucide-react';
+import { Search, Grid, Layout, Zap, Briefcase, PenTool, MessageSquare, TrendingUp, CreditCard, Sparkles, Heart, DollarSign, FolderKanban } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Store = () => {
+  const { user } = useAuth();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const categories = [
     { name: "All", icon: Grid },
+    { name: "Project Management", icon: FolderKanban },
+    { name: "Marketing Tools", icon: TrendingUp },
+    { name: "Finance", icon: DollarSign },
+    { name: "Wellness", icon: Heart },
     { name: "Productivity", icon: Zap },
     { name: "Marketing", icon: TrendingUp },
     { name: "Design", icon: PenTool },
-    { name: "Customer Support", icon: MessageSquare }, // Added based on tools.js
-    { name: "SEO", icon: Layout }, // Added based on tools.js
+    { name: "Customer Support", icon: MessageSquare },
+    { name: "SEO", icon: Layout },
     { name: "Dev Tools", icon: Briefcase },
   ];
 
@@ -114,9 +121,13 @@ const Store = () => {
                       {filteredTools.map((tool) => (
                           <div key={tool.id} className="flex items-center group p-4 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5 cursor-pointer">
                               {/* Icon */}
-                              <div className={`flex-shrink-0 h-16 w-16 rounded-2xl flex items-center justify-center text-2xl font-bold bg-slate-900 border border-slate-800 text-white shadow-lg overflow-hidden relative group-hover:scale-105 transition-transform`}>
-                                  <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors"></div>
-                                  {tool.name.charAt(0)}
+                              <div className={`flex-shrink-0 h-16 w-16 rounded-2xl flex items-center justify-center text-2xl font-bold bg-white border border-slate-800 text-slate-900 shadow-lg overflow-hidden relative group-hover:scale-105 transition-transform p-2`}>
+                                  <img
+                                    src={tool.logo}
+                                    alt={tool.name}
+                                    className="w-full h-full object-contain"
+                                    onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = `<span class="text-2xl font-bold text-slate-900">${tool.name.charAt(0)}</span>`; }}
+                                  />
                               </div>
 
                               {/* Content */}
@@ -150,6 +161,29 @@ const Store = () => {
                         </div>
                     )}
               </div>
+
+              {/* Subscribe CTA Banner */}
+              {user?.subscription_status !== 'active' && (
+                <div className="mt-12 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-white text-lg">Unlock all {tools.length} tools for $99/mo</p>
+                      <p className="text-slate-400 text-sm mt-0.5">One subscription. Cancel anytime. Powered by PayPal.</p>
+                    </div>
+                  </div>
+                  <Link
+                    to="/dashboard"
+                    className="flex-shrink-0 flex items-center gap-2 bg-white text-slate-900 font-bold px-7 py-3 rounded-xl hover:bg-slate-100 hover:-translate-y-0.5 transition-all shadow-lg text-sm whitespace-nowrap"
+                  >
+                    <CreditCard className="w-4 h-4" />
+                    Subscribe Now
+                  </Link>
+                </div>
+              )}
+
           </div>
       </div>
     </div>

@@ -40,15 +40,21 @@ const Home = () => {
 
                                 {/* Hero Abstract UI */}
                     <div className="mt-20 sm:mt-32 relative perspective-1000">
-                         <div className="relative mx-auto max-w-5xl rounded-[24px] bg-slate-900 border border-slate-800 p-2 shadow-[20px_20px_60px_rgba(0,0,0,0.5),-5px_-5px_20px_rgba(255,255,255,0.02)] transform rotate-x-12">
-                                 <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                                 
-                                 <div className="bg-slate-950/80 rounded-[20px] overflow-hidden p-6 grid grid-cols-2 md:grid-cols-5 gap-6">
-                                        {tools.slice(0, 10).map((tool) => (
-                                                <div key={tool.id} className="h-32 bg-slate-900 rounded-xl border border-slate-800 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-1px_-1px_2px_rgba(255,255,255,0.05)] flex items-center justify-center group overflow-hidden relative" title={tool.name}>
-                                                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                         <div className="h-16 w-16 rounded-xl bg-white p-2 shadow-[5px_5px_10px_rgba(0,0,0,0.3),-2px_-2px_5px_rgba(255,255,255,0.03)] flex items-center justify-center overflow-hidden">
-                                                                <img src={tool.logo} alt={tool.name} className="w-full h-full object-contain" />
+                         <div className="relative mx-auto max-w-5xl transform rotate-x-12">
+                                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+                                        {tools.slice(0, 10).map((tool, index) => (
+                                                <div 
+                                                    key={tool.id} 
+                                                    className="flex flex-col items-center justify-center group" 
+                                                    style={{animationDelay: `${index * 100}ms`}}
+                                                >
+                                                         <div className="h-20 w-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-4 shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:scale-110 hover:-translate-y-2 transition-all duration-300 flex items-center justify-center" title={tool.name}>
+                                                                <img
+                                                                  src={tool.logo}
+                                                                  alt={tool.name}
+                                                                  className="w-full h-full object-contain drop-shadow-md"
+                                                                  onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = `<span class="text-xl font-bold text-white">${tool.name.charAt(0)}</span>`; }}
+                                                                />
                                                          </div>
                                                 </div>
                                         ))}
@@ -230,11 +236,13 @@ const Home = () => {
                                         <span className="text-sm font-semibold leading-6 tracking-wide text-slate-500">USD</span>
                                     </p>
                                     <Link
-                                        to="/apply"
-                                        className="mt-10 block w-full rounded-md bg-white px-3 py-2 text-center text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                                        to="/dashboard"
+                                        className="mt-10 flex items-center justify-center gap-2 w-full rounded-xl bg-white px-3 py-3 text-center text-sm font-bold text-slate-900 shadow-sm hover:bg-slate-100 hover:-translate-y-0.5 transition-all"
                                     >
-                                        Get access
+                                        <CreditCard className="w-4 h-4" />
+                                        Subscribe Now
                                     </Link>
+                                    <p className="mt-3 text-xs text-slate-500">Powered by PayPal · Cancel anytime</p>
                                     <p className="mt-6 text-xs leading-5 text-slate-500">
                                         Invoices and receipts available for easy company expensing.
                                     </p>
@@ -259,12 +267,19 @@ const Home = () => {
                         <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-400">
                             Join hundreds of other smart founders saving money and time.
                         </p>
-                        <div className="mt-10 flex items-center justify-center gap-x-6">
+                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
-                                to="/apply"
-                                className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all"
+                                to="/dashboard"
+                                className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all flex items-center gap-2"
                             >
-                                Get started
+                                <CreditCard className="w-5 h-5" />
+                                Subscribe — $99/mo
+                            </Link>
+                            <Link
+                                to="/store"
+                                className="rounded-[16px] border border-slate-700 px-8 py-3.5 text-lg font-medium text-slate-300 hover:text-white hover:border-slate-500 transition-all"
+                            >
+                                View all apps →
                             </Link>
                         </div>
                     </div>

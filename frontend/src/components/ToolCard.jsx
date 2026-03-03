@@ -6,8 +6,13 @@ const ToolCard = ({ tool }) => {
     <div className="group relative flex flex-col overflow-hidden rounded-[20px] bg-slate-900 border border-slate-800 transition-all hover:shadow-[8px_8px_16px_rgba(0,0,0,0.6),-2px_-2px_8px_rgba(255,255,255,0.03)] hover:-translate-y-1 hover:border-slate-600">
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-6">
-            <div className={`h-14 w-14 rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] bg-slate-800 border border-slate-700`}>
-                {tool.name.charAt(0)}
+            <div className={`h-14 w-14 rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] bg-white border border-slate-700 p-2 overflow-hidden`}>
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  className="w-full h-full object-contain"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = `<span class="text-xl font-bold text-slate-900">${tool.name.charAt(0)}</span>`; }}
+                />
             </div>
              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-950 border border-slate-800 text-slate-400 group-hover:bg-slate-800 group-hover:text-white group-hover:border-slate-600 transition-colors">
                 {tool.category}

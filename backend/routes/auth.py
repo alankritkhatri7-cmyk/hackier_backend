@@ -10,10 +10,11 @@ JWT Flow:
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
+import bcrypt as _bcrypt
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
-from passlib.context import CryptContext
 from pydantic import BaseModel, EmailStr
 
 from config import JWT_ALGORITHM, JWT_EXPIRE_MINUTES, JWT_SECRET
@@ -22,7 +23,7 @@ from db import supabase
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 # ── Password hashing ─────────────────────────────────────────────────────────
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Using bcrypt directly to avoid passlib 1.7.4 / bcrypt 4+ incompatibility.
 
 # ── OAuth2 bearer token extraction ───────────────────────────────────────────
 # tokenUrl points to the login endpoint so Swagger UI can authenticate.
@@ -48,11 +49,11 @@ class TokenResponse(BaseModel):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def _hash_password(plain: str) -> str:
-    return pwd_context.hash(plain)
+    return _bcrypt.hashpw(plain.encode(), _bcrypt.gensalt()).decode()
 
 
 def _verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    return _bcrypt.checkpw(plain.encode(), hashed.encode())
 
 
 def _create_jwt(data: dict, expires_delta: Optional[timedelta] = None) -> str:
