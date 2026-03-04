@@ -30,7 +30,7 @@ import requests
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from pydantic import BaseModel
 
-from config import PAYPAL_API, PAYPAL_CLIENT_ID, PAYPAL_SECRET
+from app_config import PAYPAL_API, PAYPAL_CLIENT_ID, PAYPAL_SECRET
 from db import supabase
 from routes.auth import get_current_business
 

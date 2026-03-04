@@ -17,7 +17,7 @@ from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from pydantic import BaseModel, EmailStr
 
-from config import JWT_ALGORITHM, JWT_EXPIRE_MINUTES, JWT_SECRET
+from app_config import JWT_ALGORITHM, JWT_EXPIRE_MINUTES, JWT_SECRET
 from db import supabase
 
 router = APIRouter(prefix="/auth", tags=["auth"])
