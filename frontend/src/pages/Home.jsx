@@ -1,251 +1,224 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Layers, Users, MousePointer2, PieChart, CreditCard, Download, ArrowRight, Check } from 'lucide-react';
+import { Layers, Users, MousePointer2, PieChart, CreditCard, Download, ArrowRight, Check, Shield, BarChart3, Globe } from 'lucide-react';
 import { tools } from '../data/tools';
-// Determine if FAQ component exists or was hallucinated. Assuming it exists based on import in original file.
 import FAQ from '../components/FAQ';
 
 const Home = () => {
     return (
-        <div className="bg-slate-950 min-h-screen selection:bg-brand-500/30 selection:text-brand-200">
-                        <div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-24 lg:pb-32 bg-slate-900">
-                            <img
-                                src="/bg.png"
-                                alt=""
-                                className="absolute inset-x-0 -top-20 -z-20 w-full object-cover object-bottom opacity-50"
-                            />
-                            
-                            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
-                                <div className="max-w-3xl text-left">
-                                    <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl mb-8 drop-shadow-lg shadow-black/50">
-                                        Stop paying enterprise prices for your daily apps
-                                    </h1>
+        <div className="bg-black min-h-screen text-white font-sans selection:bg-white/20">
+            {/* Hero Section */}
+            <div className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden">
+                {/* Background Gradients */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
+                
+                <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center z-10">
+                    <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-slate-400 ring-1 ring-inset ring-slate-800 mb-8 bg-slate-900/50 backdrop-blur-sm">
+                        <span className="flex h-2 w-2 rounded-full bg-indigo-500 mr-2"></span>
+                        Powering the next generation of indie hackers
+                    </div>
+                
+                    <h1 className="text-5xl font-medium tracking-tight text-white sm:text-7xl mb-8">
+                        Stop paying enterprise prices <br className="hidden sm:block" />
+                        for your daily apps.
+                    </h1>
+                    
+                    <p className="mt-6 text-xl leading-8 text-slate-400 max-w-2xl mx-auto">
+                        Replace your $5000/mo SaaS stack with one simple $100 subscription. 
+                        Get access to premium indie tools for project management, marketing, design, and more.
+                    </p>
+                    
+                    <div className="mt-10 flex items-center justify-center gap-x-6">
+                        <Link to="/apply" className="rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black shadow-sm hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all">
+                            Get Started
+                        </Link>
+                        <Link to="/store" className="rounded-full bg-slate-900/50 px-8 py-3.5 text-sm font-semibold text-white ring-1 ring-inset ring-slate-700 hover:bg-slate-800 transition-all">
+                            View Included Apps
+                        </Link>
+                    </div>
+
+                    {/* Dashboard Preview */}
+                    <div className="mt-16 sm:mt-24 relative">
+                        <div className="rounded-xl bg-slate-900/50 border border-slate-800 p-2 shadow-2xl shadow-indigo-500/10 ring-1 ring-white/10 backdrop-blur-sm">
+                            <div className="rounded-lg bg-slate-950 overflow-hidden relative aspect-[16/9] sm:aspect-[2/1] border border-slate-800/50">
+                                {/* Mock Dashboard Content */}
+                                <div className="absolute inset-0 flex">
+                                    {/* Sidebar */}
+                                    <div className="w-16 sm:w-64 border-r border-slate-800 bg-slate-900/30 hidden sm:flex flex-col p-4 gap-4">
+                                        <div className="h-8 w-8 bg-indigo-500 rounded-lg mb-4"></div>
+                                        <div className="h-4 w-2/3 bg-slate-800 rounded"></div>
+                                        <div className="h-4 w-1/2 bg-slate-800 rounded"></div>
+                                        <div className="h-4 w-3/4 bg-slate-800 rounded"></div>
+                                        <div className="mt-auto h-12 w-full bg-slate-800/50 rounded-lg"></div>
+                                    </div>
                                     
-                                    <p className="mt-6 text-xl leading-8 text-white max-w-2xl font-medium drop-shadow-md shadow-black/50">
-                                        Replace your $5000/mo SaaS stack with one simple $100 subscription. 
-                                        <br/>
-                                        Get access to premium indie tools for project management, marketing, design, and more.
-                                    </p>
-                                    
-                                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-start gap-6">
-                                         <Link to="/apply" className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all">
-                                            Get Started
-                                         </Link>
-                                         <Link to="/store" className="rounded-[16px] border border-slate-600 bg-slate-800 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-slate-700 hover:-translate-y-1 transition-all flex items-center gap-2">
-                                            Included Apps
-                                         </Link>
-                                     
+                                    {/* Main Content */}
+                                    <div className="flex-1 p-6 sm:p-10 bg-gradient-to-br from-slate-950 to-slate-900">
+                                        <div className="flex justify-between items-center mb-10">
+                                            <div className="space-y-2">
+                                                <div className="h-8 w-48 bg-slate-800 rounded"></div>
+                                                <div className="h-4 w-96 bg-slate-800/50 rounded hidden sm:block"></div>
+                                            </div>
+                                            <div className="h-10 w-32 bg-indigo-600/20 border border-indigo-500/30 rounded-lg hidden sm:block"></div>
+                                        </div>
+                                        
+                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                                            {[1, 2, 3].map((i) => (
+                                                <div key={i} className="h-32 rounded-xl bg-slate-900 border border-slate-800 p-4 relative overflow-hidden group">
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                                                    <div className="h-8 w-8 bg-slate-800 rounded mb-4"></div>
+                                                    <div className="h-6 w-24 bg-slate-800 rounded mb-2"></div>
+                                                    <div className="h-4 w-12 bg-indigo-500/50 rounded"></div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        
+                                        <div className="h-64 rounded-xl bg-slate-900 border border-slate-800 p-6 flex items-end justify-between gap-2 overflow-hidden">
+                                             {[40, 70, 45, 90, 60, 80, 50, 75, 65, 95, 20, 50].map((h, i) => (
+                                                 <div key={i} className="w-full bg-indigo-500/20 hover:bg-indigo-500/40 transition-colors rounded-t-sm relative group" style={{height: `${h}%`}}>
+                                                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                                         ${h * 100}
+                                                     </div>
+                                                 </div>
+                                             ))}
+                                        </div>
                                     </div>
                                 </div>
-
-                                {/* Hero Abstract UI */}
-                    <div className="mt-20 sm:mt-32 relative perspective-1000">
-                         <div className="relative mx-auto max-w-5xl transform rotate-x-12">
-                                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-                                        {tools.slice(0, 10).map((tool, index) => (
-                                                <div 
-                                                    key={tool.id} 
-                                                    className="flex flex-col items-center justify-center group" 
-                                                    style={{animationDelay: `${index * 100}ms`}}
-                                                >
-                                                         <div className="h-20 w-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 p-4 shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:scale-110 hover:-translate-y-2 transition-all duration-300 flex items-center justify-center" title={tool.name}>
-                                                                <img
-                                                                  src={tool.logo}
-                                                                  alt={tool.name}
-                                                                  className="w-full h-full object-contain drop-shadow-md"
-                                                                  onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = `<span class="text-xl font-bold text-white">${tool.name.charAt(0)}</span>`; }}
-                                                                />
-                                                         </div>
-                                                </div>
-                                        ))}
-                                 </div>
+                                
+                                {/* Overlay Gradient to fade bottom */}
+                                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Feature Grid - Below Dashboard */}
+                    <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                         <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all">
+                             <div className="h-12 w-12 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20">
+                                 <CreditCard className="w-6 h-6 text-indigo-400" />
+                             </div>
+                             <h3 className="text-xl font-medium text-white mb-3">One Subscription</h3>
+                             <p className="text-slate-400 leading-relaxed theme-text">
+                                 Simplify your billing. Pay $100/mo and get access to tools worth over $5k/mo. No hidden per-user fees.
+                             </p>
+                         </div>
+                         
+                         <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all">
+                             <div className="h-12 w-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 border border-purple-500/20">
+                                 <Users className="w-6 h-6 text-purple-400" />
+                             </div>
+                             <h3 className="text-xl font-medium text-white mb-3">Community First</h3>
+                             <p className="text-slate-400 leading-relaxed theme-text">
+                                 Every tool is built by independent creators. Your subscription directly supports the indie hacker ecosystem.
+                             </p>
+                         </div>
+                         
+                         <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all">
+                             <div className="h-12 w-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 border border-emerald-500/20">
+                                 <Shield className="w-6 h-6 text-emerald-400" />
+                             </div>
+                             <h3 className="text-xl font-medium text-white mb-3">Vetted Quality</h3>
+                             <p className="text-slate-400 leading-relaxed theme-text">
+                                 We manually review every tool for quality, security, and uptime. Only the best make it into the bundle.
+                             </p>
                          </div>
                     </div>
                 </div>
             </div>
 
-            {/* How It Works Section */}
-            <div className="bg-slate-950 py-4 sm:py-32 relative">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl text-center mb-16">
-                        <h2 className="text-sm font-bold leading-7 text-white uppercase tracking-widest mb-3 opacity-70">How it Works</h2>
-                        <p className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-lg">
-                            The "Spotify" Model for SaaS
-                        </p>
-                        <p className="mt-6 text-lg text-slate-400">
-                            We've simplified software procurement. One subscription, unlimited access.
-                        </p>
-                    </div>
-
-                    {/* Three Steps Grid */}
-                    <div className="mx-auto max-w-5xl mb-24">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
-                            {/* Connecting Line (Only visible on MD+) */}
-                            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent z-0" />
-
-                            {[
-                                {
-                                    icon: <MousePointer2 className="w-8 h-8 text-white" />,
-                                    title: "1. Browse Store",
-                                    desc: "Explore a curated collection of premium tools for marketing, design, and dev."
-                                },
-                                {
-                                    icon: <CreditCard className="w-8 h-8 text-white" />,
-                                    title: "2. Subscribe Once",
-                                    desc: "Pay one flat monthly fee. No per-seat pricing or hidden upsells."
-                                },
-                                {
-                                    icon: <Download className="w-8 h-8 text-white" />,
-                                    title: "3. Unlimited Access",
-                                    desc: "Use any tool in the bundle. We handle the licensing and payouts."
-                                }
-                            ].map((step, idx) => (
-                                <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                                    <div className="h-24 w-24 bg-slate-900 rounded-full border border-slate-700 shadow-[0_0_20px_rgba(0,0,0,0.5)] flex items-center justify-center mb-6 hover:scale-110 transition-transform duration-300">
-                                        {step.icon}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                                    <p className="text-slate-400 leading-relaxed px-4">{step.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Revenue Flow Chart / Infographic */}
-                    <div className="mx-auto max-w-4xl bg-slate-900 rounded-[40px] border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-500 rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
-
-                        <div className="text-center mb-12">
-                            <h3 className="text-2xl font-bold text-white mb-4">Fair Revenue Share Model</h3>
-                            <p className="text-slate-400 max-w-2xl mx-auto">
-                                We believe in supporting indie hackers. That's why we share 90% of our revenue directly with the creators of the tools you use.
-                            </p>
-                        </div>
-
-                        {/* Flow Diagram */}
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-4 relative">
-                            {/* Step A: Subscriber */}
-                            <div className="flex-1 bg-slate-950 rounded-2xl p-6 border border-slate-800 w-full text-center relative z-10 group hover:-translate-y-1 transition-transform">
-                                <div className="flex justify-center mb-4">
-                                    <div className="h-12 w-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
-                                        <Users className="w-6 h-6" />
-                                    </div>
-                                </div>
-                                <div className="font-bold text-white text-lg">Subscribers</div>
-                                <div className="text-sm text-slate-500 mt-1">Pay Monthly Fee</div>
-                                <div className="mt-4 font-mono text-xl text-white bg-slate-900 rounded-lg py-1 px-3 inline-block border border-slate-800">$100</div>
-                            </div>
-
-                            {/* Arrow 1 */}
-                            <div className="hidden md:flex flex-col items-center justify-center w-20 text-slate-600">
-                                <div className="h-0.5 w-full bg-slate-700 relative">
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 -mt-[3px] w-2 h-2 border-t-2 border-r-2 border-slate-700 rotate-45 transform"></div>
-                                </div>
-                            </div>
-                            <div className="md:hidden h-10 w-0.5 bg-slate-700 relative">
-                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -ml-[3px] w-2 h-2 border-b-2 border-r-2 border-slate-700 rotate-45 transform"></div>
-                            </div>
-
-
-                            {/* Step B: Hackier Platform */}
-                            <div className="flex-1 bg-slate-950 rounded-2xl p-6 border border-slate-700 shadow-[0_0_30px_rgba(59,130,246,0.1)] w-full text-center relative z-10 scale-105">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-800 text-xs font-bold px-3 py-1 rounded-full text-white border border-slate-600">
-                                    POOL
-                                </div>
-                                <div className="flex justify-center mb-4">
-                                    <div className="h-12 w-12 bg-white text-slate-950 rounded-xl flex items-center justify-center font-bold text-2xl shadow-lg">
-                                        H
-                                    </div>
-                                </div>
-                                <div className="font-bold text-white text-lg">Hackier Platform</div>
-                                <div className="text-sm text-slate-500 mt-1">Aggregates Revenue</div>
-                            </div>
-
-                            {/* Arrow 2 (Split) */}
-                            <div className="hidden md:flex flex-col items-center justify-center w-20 text-slate-600">
-                                <div className="h-0.5 w-full bg-slate-700 relative">
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 -mt-[3px] w-2 h-2 border-t-2 border-r-2 border-slate-700 rotate-45 transform"></div>
-                                </div>
-                            </div>
-                            <div className="md:hidden h-10 w-0.5 bg-slate-700 relative">
-                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -ml-[3px] w-2 h-2 border-b-2 border-r-2 border-slate-700 rotate-45 transform"></div>
-                            </div>
-
-                            {/* Step C: Builders */}
-                            <div className="flex-1 bg-gradient-to-br from-indigo-900/50 to-slate-900 rounded-2xl p-6 border border-indigo-500/30 w-full text-center relative z-10 group hover:-translate-y-1 transition-transform">
-                                <div className="flex justify-center mb-4">
-                                    <div className="h-12 w-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-indigo-300">
-                                        <PieChart className="w-6 h-6" />
-                                    </div>
-                                </div>
-                                <div className="font-bold text-white text-lg">Indie Builders</div>
-                                <div className="text-sm text-indigo-200 mt-1">Receive 90% Share</div>
-                                <div className="mt-4 text-xs text-slate-400 bg-slate-950/50 rounded p-2">
-                                    Paid based on app usage & downloads
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {/* Included Tools Strip (Replacing the grid for cleaner look) */}
+            <div className="py-24 bg-black border-t border-slate-900">
+                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                     <p className="text-center text-sm font-semibold text-slate-500 mb-12 uppercase tracking-widest">
+                         Includes access to Premium Tools like
+                     </p>
+                     <div className="flex flex-wrap justify-center gap-12 sm:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                          {tools.slice(0, 6).map((tool) => (
+                               <div key={tool.id} className="flex items-center gap-3">
+                                   <div className="w-10 h-10 rounded-lg bg-slate-800/50 p-2 border border-slate-700">
+                                       <img src={tool.logo} alt={tool.name} className="w-full h-full object-contain" />
+                                   </div>
+                                   <span className="text-lg font-bold text-slate-300">{tool.name}</span>
+                               </div>
+                          ))}
+                     </div>
+                 </div>
             </div>
 
-            {/* Pricing Section */}
-            <div className="bg-slate-950 py-4 sm:py-32 relative">
+            {/* How It Works Section (Simplified) */}
+            <div className="bg-black py-24 border-t border-slate-900">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl sm:text-center mb-16">
-                        <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-lg">Transparent Pricing</h2>
-                        <p className="mt-6 text-lg leading-8 text-slate-400">
-                            No hidden fees. Just one simple subscription.
-                        </p>
-                    </div>
-                    
-                    <div className="mx-auto max-w-4xl bg-slate-900 rounded-[40px] shadow-[20px_20px_60px_rgba(0,0,0,0.6),-10px_-10px_30px_rgba(255,255,255,0.02)] lg:flex overflow-hidden border border-slate-800/50">
-                        <div className="p-10 sm:p-12 lg:flex-auto">
-                            <h3 className="text-2xl font-bold tracking-tight text-white">Membership</h3>
-                            <p className="mt-4 text-base leading-7 text-slate-400">
-                                Get full access to our growing library of tools. Perfect for early-stage startups and bootstrap teams.
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-4xl font-medium tracking-tight text-white sm:text-5xl mb-6">
+                                The "Spotify" Model for SaaS
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                We've simplified software procurement. Instead of managing 20 different invoices and subscriptions, you have one.
                             </p>
                             
-                            <div className="mt-10 flex items-center gap-x-4">
-                                <h4 className="flex-none text-sm font-semibold leading-6 text-white uppercase tracking-widest opacity-70">What's included</h4>
-                                <div className="h-px flex-auto bg-slate-800" />
-                            </div>
-                            
-                            <ul role="list" className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-slate-300 sm:grid-cols-2 sm:gap-6">
+                            <ul className="space-y-6">
                                 {[
-                                    'Unlimited access to all apps',
-                                    'Priority support',
-                                    'New apps added monthly',
-                                    'Cancel anytime',
-                                    'Direct contact with founders',
-                                    'Exclusive builder community'
-                                ].map((feature) => (
-                                    <li key={feature} className="flex gap-x-3">
-                                        <Check className="h-6 w-5 flex-none text-brand-400" aria-hidden="true" />
-                                        {feature}
+                                    "Browse a curated store of 50+ tools",
+                                    "One flat monthly fee of $99",
+                                    "Unlimited usage on all apps",
+                                    "Cancel anytime, keep your data"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-center gap-4">
+                                        <div className="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                                            <Check className="w-3 h-3 text-white" />
+                                        </div>
+                                        <span className="text-slate-300">{item}</span>
                                     </li>
                                 ))}
                             </ul>
+                            
+                            <div className="mt-10">
+                                <Link to="/store" className="text-white font-semibold flex items-center hover:text-indigo-400 transition-colors">
+                                    Browse the store <ArrowRight className="ml-2 w-4 h-4" />
+                                </Link>
+                            </div>
                         </div>
-                        <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                            <div className="rounded-2xl bg-slate-950/50 py-10 text-center ring-1 ring-inset ring-slate-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 h-full border-l border-slate-800">
-                                <div className="mx-auto max-w-xs px-8">
-                                    <p className="text-base font-semibold text-slate-400">Monthly</p>
-                                    <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                                        <span className="text-5xl font-bold tracking-tight text-white">$99</span>
-                                        <span className="text-sm font-semibold leading-6 tracking-wide text-slate-500">USD</span>
-                                    </p>
-                                    <Link
-                                        to="/dashboard"
-                                        className="mt-10 flex items-center justify-center gap-2 w-full rounded-xl bg-white px-3 py-3 text-center text-sm font-bold text-slate-900 shadow-sm hover:bg-slate-100 hover:-translate-y-0.5 transition-all"
-                                    >
-                                        <CreditCard className="w-4 h-4" />
-                                        Subscribe Now
-                                    </Link>
-                                    <p className="mt-3 text-xs text-slate-500">Powered by PayPal · Cancel anytime</p>
-                                    <p className="mt-6 text-xs leading-5 text-slate-500">
-                                        Invoices and receipts available for easy company expensing.
-                                    </p>
+                        
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-lg opacity-20"></div>
+                            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 p-8">
+                                <div className="space-y-4">
+                                     <div className="flex items-center justify-between p-4 rounded-lg bg-slate-950 border border-slate-800">
+                                         <div className="flex items-center gap-4">
+                                             <div className="w-10 h-10 rounded bg-indigo-500/20 flex items-center justify-center text-indigo-400"><MousePointer2 size={20} /></div>
+                                             <div>
+                                                 <div className="text-white font-medium">Design Tool Pro</div>
+                                                 <div className="text-xs text-slate-500">Normally $29/mo</div>
+                                             </div>
+                                         </div>
+                                         <div className="text-emerald-400 text-sm font-medium">Included</div>
+                                     </div>
+                                     <div className="flex items-center justify-between p-4 rounded-lg bg-slate-950 border border-slate-800">
+                                         <div className="flex items-center gap-4">
+                                             <div className="w-10 h-10 rounded bg-purple-500/20 flex items-center justify-center text-purple-400"><BarChart3 size={20} /></div>
+                                             <div>
+                                                 <div className="text-white font-medium">Analytics Plus</div>
+                                                 <div className="text-xs text-slate-500">Normally $49/mo</div>
+                                             </div>
+                                         </div>
+                                         <div className="text-emerald-400 text-sm font-medium">Included</div>
+                                     </div>
+                                      <div className="flex items-center justify-between p-4 rounded-lg bg-slate-950 border border-slate-800">
+                                         <div className="flex items-center gap-4">
+                                             <div className="w-10 h-10 rounded bg-pink-500/20 flex items-center justify-center text-pink-400"><Globe size={20} /></div>
+                                             <div>
+                                                 <div className="text-white font-medium">SEO Master</div>
+                                                 <div className="text-xs text-slate-500">Normally $39/mo</div>
+                                             </div>
+                                         </div>
+                                         <div className="text-emerald-400 text-sm font-medium">Included</div>
+                                     </div>
+                                     
+                                     <div className="pt-4 mt-4 border-t border-slate-800 flex justify-between items-center">
+                                         <div className="text-slate-400">Total Value</div>
+                                         <div className="text-xl font-bold text-white"><span className="line-through text-slate-600 text-sm mr-2">$117/mo</span> $99/mo</div>
+                                     </div>
                                 </div>
                             </div>
                         </div>
@@ -253,40 +226,11 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* FAQ Section */}
-            <FAQ />
-            
-            {/* CTA Section */}
-            <div className="relative isolate overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-20" />
-                <div className="px-6 py-4 sm:px-6 sm:py-32 lg:px-8 bg-slate-950">
-                    <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
-                            Ready to streamline your stack?
-                        </h2>
-                        <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-400">
-                            Join hundreds of other smart founders saving money and time.
-                        </p>
-                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link
-                                to="/dashboard"
-                                className="rounded-[16px] bg-white px-8 py-3.5 text-lg font-bold text-slate-900 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all flex items-center gap-2"
-                            >
-                                <CreditCard className="w-5 h-5" />
-                                Subscribe — $99/mo
-                            </Link>
-                            <Link
-                                to="/store"
-                                className="rounded-[16px] border border-slate-700 px-8 py-3.5 text-lg font-medium text-slate-300 hover:text-white hover:border-slate-500 transition-all"
-                            >
-                                View all apps →
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+            <div className="bg-black py-16 border-t border-slate-900">
+                 <FAQ />
             </div>
         </div>
     );
-};
+}
 
 export default Home;
